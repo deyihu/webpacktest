@@ -1,11 +1,13 @@
-import * as maptalks from "maptalks";
+import { Map, TileLayer, Util } from "maptalks";
+import "deck.gl";
 import { DeckGLLayer } from "./maptalks-deckgl";
 
-let map = new maptalks.Map('map',
+
+let map = new Map('map',
     {
         center: [-1.0761489169943843, 52.141304256882876],
         zoom: 6,
-        baseLayer: new maptalks.TileLayer('base', {
+        baseLayer: new TileLayer('base', {
             urlTemplate: '//a.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejh2N21nMzAxMmQzMnA5emRyN2lucW0ifQ.jSE-g2vsn48Ry928pqylcg',
             subdomains: ['a', 'b', 'c', 'd'],
             attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://mapbox.com/">mapbox</a>'
@@ -46,7 +48,7 @@ function addHexagonLayer() {
                 upperPercentile: 100
             }
 
-            const hexagonLayer = maptalks.Util.extend({},{
+            const hexagonLayer = Util.extend({}, {
                 layerType: "HexagonLayer",
                 id: 'heatmap',
                 colorRange: COLOR_RANGE,
@@ -59,7 +61,7 @@ function addHexagonLayer() {
                 onHover: info => { console.log(info) },
                 lightSettings: LIGHT_SETTINGS,
                 opacity: 1
-            },options);
+            }, options);
             deckglLayer.setProps({
                 layers: [hexagonLayer]
             });

@@ -6,7 +6,7 @@
   "static": "demo",
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/YeYoo/YYMap-three.git"
+    "url": "https://github.com/deyihu/webpacktest.git"
   },
   "scripts": {
     "test": "",
@@ -30,8 +30,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "deck.gl": "^6.3.2",
-    "maptalks": "^0.42.2",
-    "react": "^16.7.0"
+    "deck.gl": "^6.4.7",
+    "maptalks": "^0.42.2"
   }
 }

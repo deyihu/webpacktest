@@ -35,7 +35,7 @@ module.exports = {
         filename: PROD ? '[name].min.js' : '[name].js'
     },
     externals: {
-        maptalks:'maptalks',
-        'deck.gl':'deck'
+        // maptalks:'maptalks',
+        // 'deck.gl':'deck'
     }
 };
